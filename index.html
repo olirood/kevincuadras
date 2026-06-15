@@ -6,6 +6,53 @@
 <title>Kevin Cuadras</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230D0D0D'/><text x='50' y='68' font-family='serif' font-size='44' font-weight='bold' fill='%238B1A1A' text-anchor='middle'>KC</text></svg>"/>
+
+<!-- SEO básico -->
+<meta name="description" content="Kevin Cuadras, artista de Regional Mexicano. Escucha Destino La Muerte con Gabriel Ssoe en Spotify, Apple Music y más. Próximamente Quebrado con Joaquin Medina."/>
+<meta name="keywords" content="Kevin Cuadras, regional mexicano, Destino La Muerte, Quebrado, Joaquin Medina, Gabriel Ssoe, música mexicana, corridos"/>
+<meta name="author" content="Kevin Cuadras"/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#0D0D0D"/>
+<link rel="canonical" href="https://kevincuadras.com"/>
+
+<!-- Open Graph — WhatsApp, Facebook, iMessage -->
+<meta property="og:type" content="music.musician"/>
+<meta property="og:url" content="https://kevincuadras.com"/>
+<meta property="og:site_name" content="Kevin Cuadras"/>
+<meta property="og:title" content="Kevin Cuadras | Regional Mexicano"/>
+<meta property="og:description" content="Escucha Destino La Muerte con Gabriel Ssoe ya disponible en todas las plataformas. Próximamente: Quebrado con Joaquin Medina."/>
+<meta property="og:image" content="https://kevincuadras.com/og-image.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale" content="es_MX"/>
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@kevincuadrasc"/>
+<meta name="twitter:title" content="Kevin Cuadras | Regional Mexicano"/>
+<meta name="twitter:description" content="Escucha Destino La Muerte con Gabriel Ssoe ya disponible en todas las plataformas."/>
+<meta name="twitter:image" content="https://kevincuadras.com/og-image.jpg"/>
+
+<!-- Schema.org — le dice a Google que es un artista musical -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "Kevin Cuadras",
+  "url": "https://kevincuadras.com",
+  "genre": "Regional Mexicano",
+  "image": "https://kevincuadras.com/og-image.jpg",
+  "sameAs": [
+    "https://open.spotify.com/intl-es/artist/5rB9nhJrkE9OTWujBUKJWA",
+    "https://music.apple.com/es/artist/kevin-cuadras/1796310191",
+    "https://youtube.com/@kevincuadras-e9u4g",
+    "https://www.instagram.com/kevincuadrasc/",
+    "https://www.tiktok.com/@kevincuadras"
+  ]
+}
+</script>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="78ed4707-cc8b-43a7-99d0-ab6a987e4fdc"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -179,6 +226,8 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .prof-card.am:hover{background:rgba(0,212,255,0.08);border-color:rgba(0,212,255,0.35);}
 .prof-card.dz:hover{background:rgba(160,52,204,0.1);border-color:rgba(160,52,204,0.4);}
 .prof-card.td:hover{background:rgba(0,255,255,0.08);border-color:rgba(0,255,255,0.35);}
+.prof-card.ig{border-left:2px solid #E1306C;}
+.prof-card.ig:hover{background:rgba(225,48,108,0.1);border-color:rgba(225,48,108,0.4);}
 .prof-card.big{width:100%;}
 .prof-card svg{width:15px;height:15px;fill:currentColor;flex-shrink:0;}
 .prof-card-text{}
@@ -355,6 +404,10 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
         <a href="https://www.tiktok.com/@kevincuadras" target="_blank" rel="noopener" class="prof-card tt" data-umami-event="perfil-tiktok">
           <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.84 1.54V6.78a4.85 4.85 0 01-1.07-.09z"/></svg>
           <div class="prof-card-text"><div class="prof-card-name">TikTok</div><div class="prof-card-sub">Sígueme</div></div>
+        </a>
+        <a href="https://www.instagram.com/kevincuadrasc/" target="_blank" rel="noopener" class="prof-card ig" data-umami-event="perfil-instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <div class="prof-card-text"><div class="prof-card-name">Instagram</div><div class="prof-card-sub">Sígueme</div></div>
         </a>
         <a href="https://music.amazon.com.mx/artists/B0DX6G7NB5/kevin-cuadras" target="_blank" rel="noopener" class="prof-card am" data-umami-event="perfil-amazon">
           <svg viewBox="0 0 24 24"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.7-3.182v.685zm3.186 7.705c-.209.189-.512.201-.745.076-1.045-.869-1.235-1.272-1.808-2.099-1.731 1.766-2.953 2.295-5.194 2.295-2.652 0-4.717-1.636-4.717-4.91 0-2.558 1.387-4.296 3.361-5.148 1.713-.755 4.104-.891 5.931-1.1v-.41c0-.753.059-1.642-.384-2.294-.384-.581-1.128-.82-1.784-.82-1.212 0-2.293.622-2.555 1.912-.054.285-.265.567-.554.582l-3.096-.334c-.261-.059-.549-.269-.474-.667C5.883.726 8.897 0 11.572 0c1.364 0 3.146.364 4.223 1.399 1.364 1.272 1.232 2.968 1.232 4.814v4.361c0 1.31.543 1.887 1.054 2.595.181.253.219.556-.009.744l-1.921 1.88-.007.002zm3.606 1.77c.143.187.172.412.048.581-1.418 1.171-2.757 1.843-4.25 2.253-.155.047-.311-.027-.421-.142-.151-.163-.14-.39.034-.523 1.318-.971 2.469-2.097 3.353-3.512.143-.232.326-.284.494-.148l.742.491zm1.25 3.311c-.332-.041-.643.013-.973.114-.138.041-.251-.014-.291-.138-.042-.124.034-.251.173-.311.826-.348 2.024-.533 2.734-.043.357.247.441.635.354.979-.155.601-.688 1.461-1.317 2.128-.191.207-.374.104-.289-.131.187-.493.478-1.274.421-1.679-.037-.265-.256-.448-.562-.491-.083-.013-.168-.019-.25-.028zM0 19.805c3.456 2.509 8.35 3.946 12.917 3.946 3.381 0 7.264-.936 10.083-2.891.417-.29.078-.766-.375-.573-2.97 1.221-6.17 1.772-9.064 1.772-4.315 0-8.442-1.166-11.782-3.126-.41-.245-.764.26-.394.569l.615.303z"/></svg>
