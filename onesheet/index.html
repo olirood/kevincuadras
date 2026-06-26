@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
 <meta name="robots" content="noindex, nofollow"/>
-<link rel="canonical" href="https://kevincuadras.com/onesheet"/>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kevin Cuadras — Press One Sheet</title>
@@ -11,478 +10,207 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet" />
   <style>
 
+    /* ── FONTS ── */
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
     :root {
       --red:         #B82020;
-      --red-tint:    rgba(184,32,32,0.09);
-      --red-border:  rgba(184,32,32,0.22);
-      --ink:         #111111;
-      --ink-mid:     #444444;
-      --ink-dim:     #777777;
-      --ink-faint:   #aaaaaa;
-
-      /* True Liquid Glass — light mode */
-      --glass-bg:      rgba(255,255,255,0.62);
-      --glass-border:  rgba(255,255,255,0.92);
-      --glass-shadow:  rgba(0,0,0,0.09);
-      --glass-blur:    28px;
-      --glass-sat:     1.9;
-
-      --sheet-bg:    #dfe3e8;
+      --red-tint:    rgba(184,32,32,0.10);
+      --red-border:  rgba(184,32,32,0.28);
+      --ink:         #F5F0EB;
+      --ink-mid:     #9A9390;
+      --ink-dim:     rgba(154,147,144,0.70);
+      --ink-faint:   rgba(154,147,144,0.45);
+      --glass-bg:      rgba(245,240,235,0.05);
+      --glass-border:  rgba(245,240,235,0.10);
+      --glass-shadow:  rgba(0,0,0,0.30);
+      --glass-blur:    24px;
+      --glass-sat:     1.6;
+      --sheet-bg:    #0D0D0D;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     html, body {
       background: var(--sheet-bg);
-      font-family: 'Inter', system-ui, sans-serif;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
     }
 
-    /* ── SHEET ───────────────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 15% 10%, rgba(139,26,26,0.10) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 40% at 85% 85%, rgba(184,32,32,0.06) 0%, transparent 60%);
+      pointer-events: none; z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 0; opacity: .5;
+    }
+
     .sheet {
       width: 210mm;
       min-height: 297mm;
       margin: 24px auto;
       position: relative;
+      z-index: 1;
       overflow: hidden;
-      /* Subtle warm-cool gradient base — gives the blobs something to refract */
       background:
-        radial-gradient(ellipse 160mm 130mm at 15% 8%,  rgba(220,215,225,0.9) 0%, transparent 70%),
-        radial-gradient(ellipse 120mm 100mm at 90% 18%, rgba(210,195,195,0.7) 0%, transparent 65%),
-        radial-gradient(ellipse 140mm 110mm at 5%  85%, rgba(200,205,215,0.7) 0%, transparent 65%),
-        radial-gradient(ellipse 100mm 90mm  at 88% 80%, rgba(215,200,200,0.6) 0%, transparent 60%),
-        linear-gradient(160deg, #e2e4e9 0%, #dde0e6 40%, #e0dce0 100%);
+        radial-gradient(ellipse 160mm 130mm at 15% 8%,  rgba(139,26,26,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 120mm 100mm at 90% 18%, rgba(100,20,20,0.05) 0%, transparent 65%),
+        radial-gradient(ellipse 140mm 110mm at 5%  85%, rgba(80,15,15,0.05) 0%, transparent 65%),
+        radial-gradient(ellipse 100mm 90mm  at 88% 80%, rgba(120,25,25,0.05) 0%, transparent 60%),
+        linear-gradient(160deg, #121212 0%, #0f0f0f 40%, #111010 100%);
     }
-    @media screen { .sheet { box-shadow: 0 16px 80px rgba(0,0,0,0.22); } }
+    @media screen { .sheet { box-shadow: 0 16px 80px rgba(0,0,0,0.60); } }
 
-    /* ── GLASS CARD ──────────────────────────────────────── */
     .g {
       background: var(--glass-bg);
-      backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat)) brightness(1.04);
-      -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat)) brightness(1.04);
+      backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+      -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
       border: 1px solid var(--glass-border);
       border-radius: 13px;
-      box-shadow:
-        inset 0 1.5px 0 rgba(255,255,255,0.96),
-        inset 0 -1px 0 rgba(0,0,0,0.04),
-        0 2px 18px var(--glass-shadow);
+      box-shadow: 0 2px 18px var(--glass-shadow);
+      position: relative; overflow: hidden;
+    }
+    .g::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.10), transparent);
+      pointer-events: none;
     }
 
-    /* ── LAYOUT ──────────────────────────────────────────── */
     .content {
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
       padding: 6.5mm 6.5mm 5.5mm;
-      display: flex;
-      flex-direction: column;
-      gap: 3.5mm;
+      display: flex; flex-direction: column; gap: 3.5mm;
       min-height: 297mm;
     }
 
-    /* ── SECTION LABEL ───────────────────────────────────── */
     .sl {
-      font-size: 6.5pt;
-      font-weight: 800;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 3mm;
+      font-size: 6.5pt; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--red); margin-bottom: 3mm; opacity: 0.9;
     }
 
-    /* ════════════════════════════════════════════════════════
-       HEADER: PHOTO + NAME
-    ════════════════════════════════════════════════════════ */
-    .header-row {
-      display: flex;
-      align-items: stretch;
-      gap: 3.5mm;
-      flex-shrink: 0;
-    }
+    .header-row { display:flex; align-items:stretch; gap:3.5mm; flex-shrink:0; }
 
-    /* Photo — wider */
     .photo-wrap {
-      width: 62mm;
-      min-height: 68mm;
-      border-radius: 13px;
-      overflow: hidden;
-      flex-shrink: 0;
-      background: #ccc;
-      border: 1px solid var(--glass-border);
-      box-shadow:
-        inset 0 1.5px 0 rgba(255,255,255,0.96),
-        0 2px 18px var(--glass-shadow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 62mm; min-height: 68mm; border-radius: 13px; overflow: hidden; flex-shrink: 0;
+      background: rgba(245,240,235,0.04); border: 1px solid var(--glass-border);
+      box-shadow: 0 2px 18px var(--glass-shadow);
+      display:flex; align-items:center; justify-content:center;
     }
     .photo-placeholder-inner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      color: #999;
-      font-size: 7.5pt;
-      font-weight: 600;
-      text-align: center;
+      display:flex; flex-direction:column; align-items:center; gap:6px;
+      color:var(--ink-dim); font-size:7.5pt; font-weight:600; text-align:center;
     }
-    .photo-placeholder-inner svg { opacity: 0.3; }
+    .photo-placeholder-inner svg { opacity:0.3; }
 
-    /* Name card */
-    .name-card {
-      flex: 1;
-      padding: 5.5mm 6mm 5mm;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+    .name-card { flex:1; padding:5.5mm 6mm 5mm; display:flex; flex-direction:column; justify-content:space-between; }
 
-    .eyebrow {
-      font-size: 6.5pt;
-      font-weight: 800;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 2.5mm;
-    }
+    .eyebrow { font-size:6.5pt; font-weight:700; letter-spacing:0.20em; text-transform:uppercase; color:var(--ink-dim); margin-bottom:2.5mm; }
 
-    .artist-name {
-      font-family: 'Playfair Display', serif;
-      font-weight: 900;
-      font-size: 37pt;
-      line-height: 0.9;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-    }
-    .artist-name em { font-style: italic; color: var(--red); }
+    .artist-name { font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:37pt; line-height:0.9; letter-spacing:-0.01em; color:var(--ink); }
+    .artist-name em { font-style:normal; color:var(--red); }
 
-    .tags-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      margin-top: 3.5mm;
-    }
-    .tag {
-      font-size: 6.5pt;
-      font-weight: 800;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 100px;
-    }
-    .tag-red  { background: var(--red); color: #fff; }
-    .tag-out  {
-      background: rgba(0,0,0,0.055);
-      border: 1px solid rgba(0,0,0,0.11);
-      color: var(--ink-mid);
-    }
+    .tags-row { display:flex; flex-wrap:wrap; gap:5px; margin-top:3.5mm; }
+    .tag { font-size:6.5pt; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; padding:4px 10px; border-radius:100px; }
+    .tag-red { background:rgba(184,32,32,0.20); border:1px solid rgba(184,32,32,0.35); color:#e05050; }
+    .tag-out { background:rgba(245,240,235,0.05); border:1px solid rgba(245,240,235,0.10); color:var(--ink-mid); }
 
-    .release-pill {
-      margin-top: 4mm;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--red-tint);
-      border: 1px solid var(--red-border);
-      border-radius: 8px;
-      padding: 4px 10px;
-      width: fit-content;
-    }
+    .release-pill { margin-top:4mm; display:inline-flex; align-items:center; gap:6px; background:var(--red-tint); border:1px solid var(--red-border); border-radius:8px; padding:4px 10px; width:fit-content; }
     .rp-dot { width:6px; height:6px; border-radius:50%; background:var(--red); flex-shrink:0; }
-    .rp-title { font-size:7.5pt; font-weight:800; color:var(--red); }
+    .rp-title { font-size:7.5pt; font-weight:700; color:var(--red); }
     .rp-feat  { font-size:7.5pt; font-weight:500; color:rgba(184,32,32,0.65); }
 
-    /* ════════════════════════════════════════════════════════
-       BIO
-    ════════════════════════════════════════════════════════ */
-    .bio-card { padding: 5mm 6mm; flex-shrink:0; }
+    .bio-card { padding:5mm 6mm; flex-shrink:0; }
+    .bio-text { font-size:8.5pt; font-weight:500; line-height:1.75; color:var(--ink-mid); }
 
-    .bio-text {
-      font-size: 8.5pt;
-      font-weight: 500;
-      line-height: 1.75;
-      color: var(--ink-mid);
-    }
+    .quote-bar { margin-top:3.5mm; padding:3.5mm 5mm; background:var(--red-tint); border-left:3px solid var(--red); border-radius:0 8px 8px 0; }
+    .quote-bar p { font-style:italic; font-weight:500; font-size:9pt; color:rgba(245,240,235,0.65); line-height:1.5; }
+    .quote-bar span { display:block; font-size:6.5pt; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(184,32,32,0.55); margin-top:3px; font-style:normal; }
 
-    .quote-bar {
-      margin-top: 3.5mm;
-      padding: 3.5mm 5mm;
-      background: var(--red-tint);
-      border-left: 3px solid var(--red);
-      border-radius: 0 8px 8px 0;
-    }
-    .quote-bar p {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-weight: 900;
-      font-size: 9pt;
-      color: #6b1a1a;
-      line-height: 1.5;
-    }
-    .quote-bar span {
-      display:block;
-      font-size:6.5pt;
-      font-weight:800;
-      letter-spacing:0.12em;
-      text-transform:uppercase;
-      color:rgba(184,32,32,0.5);
-      margin-top:3px;
-      font-family:'Inter',sans-serif;
-      font-style:normal;
-    }
+    .stats-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:3mm; flex-shrink:0; }
+    .stat-card { padding:4mm 4.5mm; text-align:center; }
+    .stat-num { font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:27pt; line-height:1; color:var(--ink); letter-spacing:-0.01em; }
+    .stat-num span { color:var(--red); }
+    .stat-lbl { font-size:6.5pt; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-dim); margin-top:3px; }
+    .stat-sub { font-size:7pt; font-weight:400; color:var(--ink-faint); margin-top:2px; }
 
-    /* ════════════════════════════════════════════════════════
-       STATS
-    ════════════════════════════════════════════════════════ */
-    .stats-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 3mm;
-      flex-shrink: 0;
-    }
-    .stat-card { padding: 4mm 4.5mm; text-align:center; }
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-weight: 900;
-      font-size: 27pt;
-      line-height: 1;
-      color: var(--ink);
-      letter-spacing: -0.02em;
-    }
-    .stat-num span { color: var(--red); }
-    .stat-lbl { font-size:6.5pt; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-dim); margin-top:3px; }
-    .stat-sub { font-size:7pt; font-weight:500; color:var(--ink-faint); margin-top:2px; }
+    .editorial-badge { display:inline-flex; align-items:center; gap:5px; padding:5px 10px; background:rgba(30,215,96,0.08); border:1px solid rgba(30,215,96,0.20); border-radius:100px; font-size:7pt; font-weight:700; color:#1ed760; }
+    .ed-dot { width:6px; height:6px; border-radius:50%; background:#1ed760; box-shadow:0 0 5px rgba(30,215,96,0.4); flex-shrink:0; }
 
-    .editorial-badge {
-      display:inline-flex; align-items:center; gap:5px;
-      padding:5px 10px;
-      background:rgba(30,215,96,0.1);
-      border:1px solid rgba(30,215,96,0.3);
-      border-radius:100px;
-      font-size:7pt; font-weight:700; color:#1a7a45;
-    }
-    .ed-dot {
-      width:6px; height:6px; border-radius:50%;
-      background:#1ed760;
-      box-shadow:0 0 5px rgba(30,215,96,0.6);
-      flex-shrink:0;
-    }
-
-    /* ════════════════════════════════════════════════════════
-       AUDIENCE
-    ════════════════════════════════════════════════════════ */
     .two-col { display:grid; grid-template-columns:1fr 1fr; gap:3mm; flex-shrink:0; }
-    .info-card { padding: 4mm 5mm; }
+    .info-card { padding:4mm 5mm; }
 
     .demo-row { display:flex; align-items:center; gap:6px; margin-bottom:5px; }
-    .demo-lbl  { font-size:8pt; font-weight:600; color:var(--ink-mid); min-width:52px; }
-    .bar-wrap  { flex:1; height:5px; background:rgba(0,0,0,0.07); border-radius:100px; overflow:hidden; }
+    .demo-lbl  { font-size:8pt; font-weight:500; color:var(--ink-mid); min-width:52px; }
+    .bar-wrap  { flex:1; height:4px; background:rgba(245,240,235,0.06); border-radius:100px; overflow:hidden; }
     .bar-fill  { height:100%; border-radius:100px; background:var(--red); }
-    .bar-fill.dim { background:rgba(184,32,32,0.32); }
-    .demo-pct  { font-size:8pt; font-weight:800; color:var(--ink); min-width:30px; text-align:right; }
+    .bar-fill.dim { background:rgba(184,32,32,0.35); }
+    .demo-pct  { font-size:8pt; font-weight:700; color:var(--ink); min-width:30px; text-align:right; }
 
-    .city-row { display:flex; align-items:center; gap:8px; padding:4px 0; border-bottom:1px solid rgba(0,0,0,0.07); }
+    .city-row { display:flex; align-items:center; gap:8px; padding:4px 0; border-bottom:1px solid rgba(245,240,235,0.05); }
     .city-row:last-child { border-bottom:none; }
-    .city-n   { font-family:'Playfair Display',serif; font-weight:900; font-size:14pt; color:var(--red); min-width:16px; line-height:1; }
-    .city-name { font-size:9pt; font-weight:700; color:var(--ink); }
-    .city-flag { margin-left:auto; font-size:12pt; }
+    .city-n   { font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:14pt; color:var(--red); min-width:16px; line-height:1; }
+    .city-name { font-size:9pt; font-weight:600; color:var(--ink); }
+    .city-us { padding:3px 0; }
+    .city-name-us { font-size:8pt; font-weight:500; color:var(--ink-mid); padding-left:4px; }
 
-    /* US cities — smaller, secondary feel */
-    .city-us { padding: 3px 0; }
-    .city-name-us {
-      font-size: 8pt;
-      font-weight: 600;
-      color: var(--ink-mid);
-      padding-left: 4px;
-    }
+    .disco-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3mm; flex-shrink:0; }
+    .release-card { padding:0; overflow:hidden; display:flex; flex-direction:column; }
+    .release-card.feat { background:rgba(184,32,32,0.07) !important; border-color:rgba(184,32,32,0.22) !important; }
+    .release-art { width:14mm; height:14mm; object-fit:cover; display:block; border-radius:5px; flex-shrink:0; }
+    .art-placeholder { width:14mm; height:14mm; flex-shrink:0; border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:5pt; font-weight:700; color:var(--ink-faint); }
+    .art-placeholder.red-tint { background:rgba(184,32,32,0.10); }
+    .art-placeholder.neutral  { background:rgba(245,240,235,0.05); }
+    .release-body { padding:4mm; flex:1; display:flex; gap:3mm; align-items:flex-start; }
+    .release-text { flex:1; min-width:0; }
+    .rel-title { font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:12pt; color:var(--ink); line-height:1.1; margin-bottom:2px; }
+    .rel-feat { font-size:7.5pt; font-weight:600; color:var(--ink-mid); margin-bottom:4px; }
+    .rel-feat strong { color:var(--ink); font-weight:700; }
+    .rel-badge { display:inline-block; font-size:6pt; font-weight:700; letter-spacing:0.10em; text-transform:uppercase; padding:2px 8px; border-radius:100px; background:rgba(184,32,32,0.10); color:#e05050; border:1px solid rgba(184,32,32,0.22); margin-bottom:4px; }
+    .rel-desc { font-size:7pt; font-weight:400; color:var(--ink-dim); line-height:1.55; }
 
-    /* ════════════════════════════════════════════════════════
-       DISCOGRAPHY — with album art
-    ════════════════════════════════════════════════════════ */
-    .disco-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 3mm;
-      flex-shrink: 0;
-    }
+    .sw-card { padding:4.5mm 5.5mm; flex-shrink:0; }
+    .sw-inner { display:grid; grid-template-columns:1fr auto; gap:5mm; align-items:start; }
+    .sw-text { font-size:8pt; font-weight:400; color:var(--ink-mid); line-height:1.75; }
+    .sw-text strong { color:var(--ink); font-weight:700; }
+    .sw-total { display:inline-flex; align-items:center; gap:7px; margin-top:4mm; padding:4px 12px 4px 8px; background:var(--red-tint); border:1px solid var(--red-border); border-radius:100px; }
+    .sw-total-num { font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:13pt; color:var(--red); line-height:1; }
+    .sw-total-lbl { font-size:6.5pt; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(184,32,32,0.65); }
 
-    .release-card {
-      padding: 0;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-    .release-card.feat {
-      background: rgba(184,32,32,0.06) !important;
-      border-color: rgba(184,32,32,0.2) !important;
-    }
-
-    .release-art {
-      width: 14mm;
-      height: 14mm;
-      object-fit: cover;
-      display: block;
-      border-radius: 5px;
-      flex-shrink: 0;
-    }
-
-    /* Art placeholder — small thumbnail */
-    .art-placeholder {
-      width: 14mm;
-      height: 14mm;
-      flex-shrink: 0;
-      border-radius: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 5pt;
-      font-weight: 800;
-      color: #bbb;
-      letter-spacing: 0.06em;
-      text-align: center;
-      line-height: 1.3;
-    }
-    .art-placeholder.red-tint { background: rgba(184,32,32,0.1); color: rgba(184,32,32,0.45); }
-    .art-placeholder.neutral  { background: rgba(0,0,0,0.06); }
-
-    /* Release card inner layout: art + text side by side */
-    .release-body {
-      padding: 4mm;
-      flex: 1;
-      display: flex;
-      gap: 3mm;
-      align-items: flex-start;
-    }
-    .release-text { flex: 1; min-width: 0; }
-
-    .rel-title {
-      font-family: 'Playfair Display', serif;
-      font-weight: 900;
-      font-size: 10.5pt;
-      color: var(--ink);
-      line-height: 1.1;
-      margin-bottom: 2px;
-    }
-    /* Collab name — now ink-mid not faint */
-    .rel-feat {
-      font-size: 7.5pt;
-      font-weight: 700;
-      color: var(--ink-mid);
-      margin-bottom: 4px;
-    }
-    .rel-badge {
-      display:inline-block;
-      font-size:6pt; font-weight:800; letter-spacing:0.1em; text-transform:uppercase;
-      padding:2px 8px; border-radius:100px;
-      background:rgba(184,32,32,0.09); color:var(--red);
-      border:1px solid rgba(184,32,32,0.2);
-      margin-bottom:4px;
-    }
-    .rel-desc { font-size:7pt; font-weight:500; color:var(--ink-dim); line-height:1.55; }
-
-    /* ════════════════════════════════════════════════════════
-       SONGWRITING
-    ════════════════════════════════════════════════════════ */
-    .sw-card { padding: 4.5mm 5.5mm; flex-shrink:0; }
-
-    .sw-inner {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 5mm;
-      align-items: start;
-    }
-
-    .sw-text { font-size:8pt; font-weight:500; color:var(--ink-mid); line-height:1.75; }
-    .sw-text strong { color:var(--ink); font-weight:800; }
-
-    /* Total streams badge */
-    .sw-total {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      margin-top: 4mm;
-      padding: 4px 12px 4px 8px;
-      background: var(--red-tint);
-      border: 1px solid var(--red-border);
-      border-radius: 100px;
-    }
-    .sw-total-num {
-      font-family: 'Playfair Display', serif;
-      font-weight: 900;
-      font-size: 13pt;
-      color: var(--red);
-      line-height: 1;
-    }
-    .sw-total-lbl {
-      font-size: 6.5pt;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(184,32,32,0.65);
-    }
-
-    .sw-tracks {
-      display: flex;
-      flex-direction: column;
-      gap: 3.5px;
-      min-width: 52mm;
-    }
-    .sw-tracks-lbl {
-      font-size:6pt; font-weight:800; letter-spacing:0.16em; text-transform:uppercase;
-      color:var(--ink-faint); margin-bottom:3px;
-    }
-    .sw-track {
-      display:flex; align-items:center; gap:7px;
-      padding:4px 9px;
-      background:rgba(0,0,0,0.04);
-      border:1px solid rgba(0,0,0,0.07);
-      border-radius:7px;
-    }
-    .sw-dot { width:5px; height:5px; border-radius:50%; background:var(--red); flex-shrink:0; }
-    .sw-track-art {
-      width: 22px; height: 22px;
-      border-radius: 4px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-    .sw-track-art-placeholder {
-      width: 22px; height: 22px;
-      border-radius: 4px;
-      background: rgba(0,0,0,0.07);
-      flex-shrink: 0;
-    }
+    .sw-tracks { display:flex; flex-direction:column; gap:3.5px; min-width:52mm; }
+    .sw-tracks-lbl { font-size:6pt; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:3px; }
+    .sw-track { display:flex; align-items:center; gap:7px; padding:4px 9px; background:rgba(245,240,235,0.04); border:1px solid rgba(245,240,235,0.07); border-radius:7px; }
+    .sw-track-art { width:22px; height:22px; border-radius:4px; object-fit:cover; flex-shrink:0; }
+    .sw-track-art-placeholder { width:22px; height:22px; border-radius:4px; background:rgba(245,240,235,0.06); flex-shrink:0; }
     .sw-track-info { flex:1; min-width:0; }
-    .sw-track-name { font-size:7.5pt; font-weight:700; color:var(--ink); line-height:1.2; }
-    .sw-track-artist { font-size:6.5pt; font-weight:500; color:var(--ink-dim); }
-    .sw-track-streams {
-      font-size:7pt; font-weight:800; color:var(--red);
-      white-space:nowrap;
-    }
+    .sw-track-name { font-size:7.5pt; font-weight:600; color:var(--ink); line-height:1.2; }
+    .sw-track-artist { font-size:6.5pt; font-weight:400; color:var(--ink-dim); }
+    .sw-track-streams { font-size:7pt; font-weight:700; color:var(--red); white-space:nowrap; }
 
-    /* ════════════════════════════════════════════════════════
-       FOOTER
-    ════════════════════════════════════════════════════════ */
-    .footer-row {
-      margin-top:auto;
-      padding-top:1.5mm;
-      display:flex; align-items:center; justify-content:space-between;
-      flex-wrap:wrap; gap:3mm; flex-shrink:0;
-    }
+    .footer-row { margin-top:auto; padding-top:1.5mm; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:3mm; flex-shrink:0; }
     .contact-block { display:flex; flex-direction:column; gap:2px; }
-    .contact-lbl { font-size:6.5pt; font-weight:800; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-faint); }
-    .contact-email { font-size:10pt; font-weight:700; color:var(--ink); text-decoration:none; border-bottom:1.5px solid var(--red); padding-bottom:1px; }
-
+    .contact-lbl { font-size:6.5pt; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-faint); }
+    .contact-email { font-size:10pt; font-weight:700; color:var(--red); text-decoration:none; border-bottom:1.5px solid rgba(184,32,32,0.35); padding-bottom:1px; }
     .handles { display:flex; gap:12px; align-items:center; }
-    .handle  { font-size:7.5pt; font-weight:600; color:var(--ink-dim); text-decoration:none; display:flex; align-items:center; gap:4px; }
+    .handle { font-size:7.5pt; font-weight:500; color:var(--ink-mid); text-decoration:none; display:flex; align-items:center; gap:4px; }
+    .doc-note { font-size:6pt; font-weight:500; color:var(--ink-faint); text-align:right; line-height:1.7; letter-spacing:0.04em; }
 
-    .doc-note { font-size:6pt; font-weight:600; color:var(--ink-faint); text-align:right; line-height:1.7; letter-spacing:0.04em; }
-
-    /* ── PRINT ───────────────────────────────────────────── */
     @media print {
       @page { size: A4 portrait; margin: 0; }
-      html, body { background:white; margin:0; padding:0; }
+      html, body { background: #0D0D0D; margin:0; padding:0; }
       .sheet { margin:0; box-shadow:none; width:100%; min-height:100vh; }
+      body::before, body::after { display:none; }
     }
-
   </style>
 </head>
 <body>
@@ -502,7 +230,7 @@
         <h1 class="artist-name">Kevin<br><em>Cuadras</em></h1>
         <div class="tags-row">
           <span class="tag tag-red">Regional Mexicano</span>
-          <span class="tag tag-out">Sad Sierreño</span>
+          <span class="tag tag-out">Intérprete</span>
           <span class="tag tag-out">Compositor</span>
         </div>
       </div>
@@ -522,7 +250,7 @@
     <p class="sl">Artista</p>
     <p class="bio-text">Kevin Cuadras es una nueva voz del regional mexicano con una propuesta emocional, directa y melancólica. Su música se mueve entre historias de desamor, noches largas y letras que conectan con quienes viven el amor desde la nostalgia y la vulnerabilidad. Con <em>Destino La Muerte</em> junto a Gabriel Ssoe ya disponible en plataformas, <em>Quebrado</em> con Joaquín Medina consolida su voz dentro del regional triste — un género impulsado por una generación que no tiene miedo de sentir en voz alta.</p>
     <div class="quote-bar">
-      <p>"[Quote del artista — placeholder]"</p>
+      <p>"A veces son solo canciones pero si les metes un poco de amor se convierten en obras de arte"</p>
       <span>— Kevin Cuadras</span>
     </div>
   </div>
@@ -530,14 +258,14 @@
   <!-- ══ STATS ════════════════════════════════════════════ -->
   <div class="stats-row">
     <div class="stat-card g">
-      <div class="stat-num"><span>+</span>25K</div>
+      <div class="stat-num"><span>+</span>90K</div>
       <div class="stat-lbl">Streams totales</div>
-      <div class="stat-sub">Primer sencillo</div>
+      <div class="stat-sub">Ambos sencillos</div>
     </div>
     <div class="stat-card g">
-      <div class="stat-num"><span>+</span>4K</div>
+      <div class="stat-num"><span>+</span>18K</div>
       <div class="stat-lbl">Oyentes mensuales</div>
-      <div class="stat-sub">Spotify</div>
+      <div class="stat-sub">Spotify · 2026</div>
     </div>
     <div class="stat-card g" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;">
       <div class="editorial-badge">
@@ -662,9 +390,9 @@
     <p class="sl">Como compositor</p>
     <div class="sw-inner">
       <div>
-        <p class="sw-text">Kevin no solo es intérprete — es parte del ecosistema creativo que está redefiniendo el regional mexicano desde adentro. Sus coautorías acumulan más de <strong>2.3 millones de streams</strong> en canciones de artistas como <strong>Alex Favela</strong> y <strong>Octavio Cuadras</strong>.</p>
+        <p class="sw-text">Kevin no solo es intérprete — es parte del ecosistema creativo que está redefiniendo el regional mexicano desde adentro. Sus coautorías acumulan más de <strong>4 millones de streams</strong> en canciones de artistas como <strong>Alex Favela</strong> y <strong>Octavio Cuadras</strong>.</p>
         <div class="sw-total">
-          <span class="sw-total-num">+2.3M</span>
+          <span class="sw-total-num">+4M</span>
           <span class="sw-total-lbl">streams como compositor</span>
         </div>
       </div>
@@ -716,7 +444,7 @@
   <div class="footer-row">
     <div class="contact-block">
       <span class="contact-lbl">Contacto de prensa</span>
-      <a class="contact-email" href="mailto:prensa@kevincuadras.com">prensa@kevincuadras.com</a>
+      <a class="contact-email" href="#" onclick="window.location='mai'+'lto:prensa'+'@kevincuadras.com';return false;">prensa@kevincuadras.com</a>
     </div>
     <div class="handles">
       <a class="handle" href="https://kevincuadras.com" target="_blank">
