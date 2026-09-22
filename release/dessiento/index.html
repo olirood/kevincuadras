@@ -16,9 +16,12 @@
 <meta property="og:title" content="DESSIENTO · Kevin Cuadras te invita"/>
 <meta property="og:description" content="Jueves 1 de octubre, 4:00 pm. Confirma tu asistencia."/>
 <meta property="og:image" content="https://kevincuadras.com/release/dessiento/og.jpg"/>
+<meta property="og:image:secure_url" content="https://kevincuadras.com/release/dessiento/og.jpg"/>
+<meta property="og:image:type" content="image/jpeg"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:locale" content="es_MX"/>
+<meta property="og:site_name" content="Kevin Cuadras"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="DESSIENTO · Kevin Cuadras te invita"/>
 <meta name="twitter:image" content="https://kevincuadras.com/release/dessiento/og.jpg"/>
@@ -115,12 +118,10 @@ form{display:flex;flex-direction:column;gap:16px}
 
 /* ─── Tracklist ─── */
 .tl{list-style:none;border-top:1px solid var(--line)}
-.tl li{display:grid;grid-template-columns:36px 1fr auto;align-items:baseline;gap:8px;padding:13px 0;border-bottom:1px solid var(--line)}
+.tl li{display:grid;grid-template-columns:36px 1fr;align-items:baseline;gap:8px;padding:13px 0;border-bottom:1px solid var(--line)}
 .tl .n{font-size:14px;font-weight:600;color:var(--faint)}
 .tl .t{font-size:17px;font-weight:600}
 .tl .t span{display:block;font-weight:400;color:var(--mute);font-size:14px}
-.tl .tag{font-size:12px;font-weight:600;color:var(--sand)}
-.tl li.new .n{color:var(--wood)}
 
 footer{padding:24px 20px 48px;text-align:center;font-size:13px;color:var(--faint)}
 footer span{color:var(--wood)}
@@ -148,7 +149,7 @@ const EVENT = {
   mapsUrl: '',                    // vacío = se arma desde la dirección
   allowPlusOne: true,
   releaseAt: '2026-10-01T18:00:00-06:00',   // salida en plataformas (contador)
-  endpoint: 'https://script.google.com/macros/s/AKfycbyxM_4Xa-2NQxQ5HnNuAxVC4ca1ed3EUqUUPB4ZmTVHfI0Cp6s_tIm2rr_vQkFKv9nURA/exec'                  
+  endpoint: 'https://script.google.com/macros/s/AKfycbyxM_4Xa-2NQxQ5HnNuAxVC4ca1ed3EUqUUPB4ZmTVHfI0Cp6s_tIm2rr_vQkFKv9nURA/exec'          
 };
 </script>
 
@@ -202,10 +203,6 @@ const EVENT = {
           <label for="name">Nombre</label>
           <input type="text" id="name" name="name" autocomplete="name" placeholder="Nombre y apellido"/>
         </div>
-        <div class="field" id="phone-wrap">
-          <label for="phone">WhatsApp</label>
-          <input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="55 1234 5678"/>
-        </div>
         <div class="field" id="plus-wrap">
           <span class="lbl">¿Vienes con alguien?</span>
           <div class="seg">
@@ -223,7 +220,7 @@ const EVENT = {
       </form>
       <div class="done" id="done" hidden aria-live="polite">
         <b id="done-t">¡Nos vemos ahí!</b>
-        <p id="done-p">Te escribimos por WhatsApp un día antes.</p>
+        <p id="done-p">Te esperamos el jueves 1 de octubre.</p>
         <button class="link" type="button" id="ics2">Agregar al calendario</button>
       </div>
     </div>
@@ -245,13 +242,13 @@ const EVENT = {
   <section class="col" style="padding-top:8px">
     <h2>Tracklist</h2>
     <ol class="tl">
-      <li class="new"><span class="n">01</span><span class="t">Bipolar<span>feat. Angel Cervantes</span></span><span class="tag">Inédita</span></li>
-      <li><span class="n">02</span><span class="t">Destino la muerte<span>feat. Gabriel Ssoe</span></span><span></span></li>
-      <li><span class="n">03</span><span class="t">Quebrado<span>feat. Joaquín Medina</span></span><span></span></li>
-      <li class="new"><span class="n">04</span><span class="t">Picasso</span><span class="tag">Inédita</span></li>
-      <li><span class="n">05</span><span class="t">Pensándote<span>feat. Mosmo</span></span><span></span></li>
-      <li><span class="n">06</span><span class="t">Tal vez</span><span></span></li>
-      <li class="new"><span class="n">07</span><span class="t">Solo</span><span class="tag">Inédita</span></li>
+      <li><span class="n">01</span><span class="t">Bipolar<span>feat. Angel Cervantes</span></span></li>
+      <li><span class="n">02</span><span class="t">Destino la muerte<span>feat. Gabriel Ssoe</span></span></li>
+      <li><span class="n">03</span><span class="t">Quebrado<span>feat. Joaquín Medina</span></span></li>
+      <li><span class="n">04</span><span class="t">Picasso</span></li>
+      <li><span class="n">05</span><span class="t">Pensándote<span>feat. Mosmo</span></span></li>
+      <li><span class="n">06</span><span class="t">Tal vez</span></li>
+      <li><span class="n">07</span><span class="t">Solo</span></li>
     </ol>
   </section>
 </main>
@@ -316,7 +313,6 @@ const EVENT = {
   if(!EVENT.allowPlusOne){$('plus-wrap').remove();$('guest-wrap').remove();}
   function sync(){
     const no=form.attending.value==='No';
-    $('phone-wrap').hidden=no;
     if(!EVENT.allowPlusOne)return;
     $('plus-wrap').hidden=no;
     $('guest-wrap').hidden=no||form.plusone.value!=='1';
@@ -332,16 +328,15 @@ const EVENT = {
   form.addEventListener('submit',async e=>{
     e.preventDefault(); err.textContent='';
     const att=form.attending.value;
-    const name=form.name.value.trim(), phone=form.phone.value.replace(/[^\d+]/g,'');
+    const name=form.name.value.trim();
     if(name.length<3){err.textContent='Escribe tu nombre.';form.name.focus();return}
-    if(att!=='No'&&phone.replace('+','').length<10){err.textContent='Revisa tu WhatsApp: son 10 dígitos.';form.phone.focus();return}
     if(form.company.value)return;
     const plus=att!=='No'&&EVENT.allowPlusOne&&form.plusone.value==='1';
     if(plus&&form.guest.value.trim().length<3){err.textContent='Escribe el nombre de tu acompañante.';form.guest.focus();return}
     if(!EVENT.endpoint){err.textContent='La confirmación aún no está conectada.';return}
 
     const q=new URLSearchParams(location.search);
-    const payload={name,phone:att==='No'?'':phone,attending:att,plusone:plus?1:0,guest:plus?form.guest.value.trim():'',
+    const payload={name,attending:att,plusone:plus?1:0,guest:plus?form.guest.value.trim():'',
       source:q.get('utm_source')||q.get('ref')||'directo',ua:navigator.userAgent.slice(0,160)};
 
     btn.disabled=true;btn.textContent='Enviando…';
@@ -351,7 +346,7 @@ const EVENT = {
       try{if(window.umami)umami.track('rsvp',{attending:att,plusone:payload.plusone})}catch(_){}
       form.hidden=true; $('done').hidden=false;
       if(att==='No'){$('done-t').textContent='Gracias por avisar';$('done-p').textContent='DESSIENTO sale el 1 de octubre en todas las plataformas.';$('ics2').remove();}
-      if(att==='Quizá'){$('done-t').textContent='Ojalá puedas llegar';$('done-p').textContent='Si se te acomoda, te esperamos. Te escribimos por WhatsApp un día antes.';}
+      if(att==='Quizá'){$('done-t').textContent='Ojalá puedas llegar';$('done-p').textContent='Si se te acomoda, te esperamos.';}
     }catch(_){
       err.textContent='No se pudo enviar. Intenta de nuevo.';btn.disabled=false;btn.textContent='Enviar respuesta';
     }
