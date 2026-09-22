@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>DESSIENTO · Kevin Cuadras te invita</title>
+
+<!-- Privada: invitación -->
+<meta name="robots" content="noindex, nofollow"/>
+<meta name="description" content="El 1 de octubre sale DESSIENTO y lo quiero escuchar con ustedes. Confirma tu asistencia."/>
+<meta name="theme-color" content="#0E110B"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://kevincuadras.com/release/dessiento/"/>
+<meta property="og:title" content="DESSIENTO · Kevin Cuadras te invita"/>
+<meta property="og:description" content="Jueves 1 de octubre, 4:00 pm. Confirma tu asistencia."/>
+<meta property="og:image" content="https://kevincuadras.com/release/dessiento/og.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale" content="es_MX"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="DESSIENTO · Kevin Cuadras te invita"/>
+<meta name="twitter:image" content="https://kevincuadras.com/release/dessiento/og.jpg"/>
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230E110B'/%3E%3Ctext x='50' y='64' font-family='Arial%2C sans-serif' font-size='40' font-weight='800' fill='%23C48C4C' text-anchor='middle'%3EKC%3C/text%3E%3C/svg%3E"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+<script defer src="https://cloud.umami.is/script.js" data-website-id="78ed4707-cc8b-43a7-99d0-ab6a987e4fdc"></script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0E110B; --card:#171A13; --line:#2A2E25;
+  --text:#EDECE7; --mute:#9DA398; --faint:#6E7469;
+  --wood:#C48C4C; --sand:#E3C49E; --ink:#121410;
+}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{background:var(--bg);color:var(--text);font-family:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+img{display:block;max-width:100%}
+.col{width:100%;max-width:520px;margin:0 auto}
+
+/* ─── Primera pantalla ─── */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero img{position:absolute;left:0;top:0;width:100%;height:74%;object-fit:cover;object-position:50% 20%;
+  -webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent 100%);mask-image:linear-gradient(to bottom,#000 70%,transparent 100%)}
+.hero::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(14,17,11,0) 45%,rgba(14,17,11,.6) 62%,var(--bg) 76%)}
+.hero-copy{position:relative;z-index:1;text-align:center;padding:0 20px calc(40px + env(safe-area-inset-bottom))}
+.from{font-size:15px;color:#D8D7D1}
+.title{margin-top:10px;font-size:clamp(52px,15vw,84px);font-weight:600;letter-spacing:-.03em;line-height:1}
+.title span{color:var(--sand)}
+.when{margin-top:12px;font-size:17px;color:var(--mute)}
+.answer{margin:28px auto 0;max-width:420px;display:grid;grid-template-columns:repeat(3,1fr);
+  background:rgba(237,236,231,.08);border:1px solid rgba(237,236,231,.14);border-radius:999px;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.answer a{display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 6px;text-decoration:none;color:var(--text);font-size:14px;font-weight:600}
+.answer a + a{border-left:1px solid rgba(237,236,231,.14)}
+.answer svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6}
+.more{display:inline-block;margin-top:18px;font-size:14px;color:var(--mute);text-decoration:none}
+.more:hover{color:var(--text)}
+
+/* ─── Secciones ─── */
+section{padding:56px 20px}
+.note{padding-top:24px}
+.note .big{font-size:clamp(26px,6vw,34px);font-weight:500;letter-spacing:-.02em;line-height:1.2}
+.note .big span{color:var(--sand)}
+.note p + p{margin-top:18px;font-size:17px;color:var(--mute)}
+
+h2{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:14px}
+
+.facts{border-top:1px solid var(--line)}
+.fact{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.fact b{display:block;font-size:20px;font-weight:500;letter-spacing:-.01em}
+.fact small{display:block;font-size:15px;color:var(--mute)}
+.link{flex:none;font:inherit;font-size:13px;font-weight:600;color:var(--text);background:none;border:1px solid var(--line);border-radius:999px;padding:9px 14px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.link:hover{border-color:var(--mute)}
+
+/* ─── Formulario ─── */
+.rsvp{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px 20px}
+.rsvp h3{font-size:26px;font-weight:500;letter-spacing:-.02em;margin-bottom:22px}
+form{display:flex;flex-direction:column;gap:16px}
+.field > label,.lbl{display:block;font-size:13px;font-weight:600;color:var(--mute);margin-bottom:8px}
+.field input[type=text],.field input[type=tel]{width:100%;font:inherit;font-size:17px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px 16px;outline:none}
+.field input::placeholder{color:#555B51}
+.field input:focus{border-color:var(--wood)}
+.seg{position:relative;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:6px}
+.seg input{position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;pointer-events:none}
+.seg label{text-align:center;cursor:pointer;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 6px;font-size:15px;font-weight:600;color:var(--text)}
+.seg input:checked + label{background:var(--text);color:var(--ink);border-color:var(--text)}
+.seg input:focus-visible + label{outline:2px solid var(--wood);outline-offset:2px}
+[hidden]{display:none!important}
+.submit{margin-top:4px;font:inherit;font-size:16px;font-weight:700;color:var(--ink);background:var(--sand);border:0;border-radius:999px;padding:16px;cursor:pointer}
+.submit[disabled]{opacity:.55;cursor:wait}
+.err{font-size:14px;color:#F2B8A8;min-height:0}
+.err:empty{display:none}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.done{text-align:center;padding:12px 0}
+.done b{display:block;font-size:26px;font-weight:500;letter-spacing:-.02em}
+.done p{margin-top:8px;color:var(--mute)}
+.done .link{display:inline-block;margin-top:18px}
+
+/* ─── Portada + contador ─── */
+.cover{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:20px}
+.count{margin-top:18px;text-align:center}
+.count-label{font-size:14px;color:var(--mute)}
+.clock{margin-top:12px;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px}
+.clock div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 4px 12px}
+.clock b{display:block;font-size:clamp(28px,8vw,40px);font-weight:500;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums;color:var(--text)}
+.clock span{display:block;margin-top:6px;font-size:12px;color:var(--faint)}
+.out{font-size:22px;font-weight:500;color:var(--sand)}
+
+/* ─── Tracklist ─── */
+.tl{list-style:none;border-top:1px solid var(--line)}
+.tl li{display:grid;grid-template-columns:36px 1fr auto;align-items:baseline;gap:8px;padding:13px 0;border-bottom:1px solid var(--line)}
+.tl .n{font-size:14px;font-weight:600;color:var(--faint)}
+.tl .t{font-size:17px;font-weight:600}
+.tl .t span{display:block;font-weight:400;color:var(--mute);font-size:14px}
+.tl .tag{font-size:12px;font-weight:600;color:var(--sand)}
+.tl li.new .n{color:var(--wood)}
+
+footer{padding:24px 20px 48px;text-align:center;font-size:13px;color:var(--faint)}
+footer span{color:var(--wood)}
+
+@media (min-width:720px){
+  .hero{min-height:auto;max-width:520px;margin:32px auto 0;border-radius:28px;aspect-ratio:4/6}
+  .hero img{height:76%;object-position:50% 0}
+  .hero-copy{padding-bottom:36px}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════
+     DATOS DEL EVENTO — edita solo este bloque
+     ════════════════════════════════════════════════ -->
+<script>
+const EVENT = {
+  date:    '2026-10-01',          // jueves 1 de octubre
+  start:   '16:00',               // hora CDMX, 24 h
+  end:     '20:00',               // solo para el archivo de calendario
+  venue:   'Valenzo Studios',
+  address: 'Lluvia 269, Jardines del Pedregal',
+  city:    'Ciudad de México',     // solo para el mapa y el calendario
+  mapsUrl: '',                    // vacío = se arma desde la dirección
+  allowPlusOne: true,
+  releaseAt: '2026-10-01T18:00:00-06:00',   // salida en plataformas (contador)
+  endpoint: 'https://script.google.com/macros/s/AKfycbyxM_4Xa-2NQxQ5HnNuAxVC4ca1ed3EUqUUPB4ZmTVHfI0Cp6s_tIm2rr_vQkFKv9nURA/exec'                  
+};
+</script>
+
+<header class="hero">
+  <img src="portada.jpg" alt="Kevin Cuadras toca la guitarra en el cuarto de la portada de DESSIENTO" fetchpriority="high"/>
+  <div class="hero-copy">
+    <p class="from">Kevin Cuadras te invita</p>
+    <p class="title"><span>DES</span>SIENTO</p>
+    <p class="when" id="when">—</p>
+    <nav class="answer" aria-label="Responder">
+      <a href="#rsvp" data-a="Sí" data-umami-event="rsvp-hero-si"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.3l2.7 2.7L16.2 9.4"/></svg>Asistiré</a>
+      <a href="#rsvp" data-a="No" data-umami-event="rsvp-hero-no"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M9 9l6 6M15 9l-6 6"/></svg>No asistiré</a>
+      <a href="#rsvp" data-a="Quizá" data-umami-event="rsvp-hero-quiza"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.7-.9 1.3v.6"/><circle cx="12" cy="16.6" r=".6" fill="currentColor"/></svg>Quizá</a>
+    </nav>
+    <a class="more" href="#nota">Ver detalles ↓</a>
+  </div>
+</header>
+
+<main>
+  <section class="note col" id="nota">
+    <p class="big">El 1 de octubre sale <span>DESSIENTO</span>, mi primer EP, y lo quiero escuchar con ustedes.</p>
+    <p>Todo lo que dejé de sentir, en siete canciones. Lo vamos a poner completo, en orden, con algo de tomar y sin formalidades.</p>
+  </section>
+
+  <section class="col" style="padding-top:8px">
+    <h2>Detalles</h2>
+    <div class="facts">
+      <div class="fact">
+        <div><b id="f-date">—</b><small id="f-time">—</small></div>
+        <button class="link" type="button" id="ics" data-umami-event="rsvp-calendar">Agregar al calendario</button>
+      </div>
+      <div class="fact">
+        <div><b id="f-venue">—</b><small id="f-addr">—</small></div>
+        <a class="link" id="maps" target="_blank" rel="noopener" data-umami-event="rsvp-maps">Cómo llegar</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="col" id="rsvp" style="padding-top:8px">
+    <div class="rsvp">
+      <h3>¿Vienes?</h3>
+      <form id="form" novalidate>
+        <div class="field">
+          <div class="seg">
+            <input type="radio" name="attending" id="a-si" value="Sí" checked/><label for="a-si">Asistiré</label>
+            <input type="radio" name="attending" id="a-no" value="No"/><label for="a-no">No asistiré</label>
+            <input type="radio" name="attending" id="a-q" value="Quizá"/><label for="a-q">Quizá</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" autocomplete="name" placeholder="Nombre y apellido"/>
+        </div>
+        <div class="field" id="phone-wrap">
+          <label for="phone">WhatsApp</label>
+          <input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="55 1234 5678"/>
+        </div>
+        <div class="field" id="plus-wrap">
+          <span class="lbl">¿Vienes con alguien?</span>
+          <div class="seg">
+            <input type="radio" name="plusone" id="p0" value="0" checked/><label for="p0">Solo yo</label>
+            <input type="radio" name="plusone" id="p1" value="1"/><label for="p1">+1</label>
+          </div>
+        </div>
+        <div class="field" id="guest-wrap" hidden>
+          <label for="guest">Nombre de tu acompañante</label>
+          <input type="text" id="guest" name="guest" autocomplete="off"/>
+        </div>
+        <div class="hp" aria-hidden="true"><input id="company" name="company" tabindex="-1" autocomplete="off"/></div>
+        <p class="err" id="err" role="alert"></p>
+        <button class="submit" type="submit" id="submit">Enviar respuesta</button>
+      </form>
+      <div class="done" id="done" hidden aria-live="polite">
+        <b id="done-t">¡Nos vemos ahí!</b>
+        <p id="done-p">Te escribimos por WhatsApp un día antes.</p>
+        <button class="link" type="button" id="ics2">Agregar al calendario</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="col release" style="padding-top:8px">
+    <img class="cover" src="portada.jpg" alt="Portada de DESSIENTO" loading="lazy"/>
+    <div class="count" id="count">
+      <p class="count-label" id="count-label">Sale en plataformas el 1 de octubre a las 6:00 pm</p>
+      <div class="clock" id="clock" aria-live="off">
+        <div id="u-d"><b id="c-d">00</b><span>días</span></div>
+        <div><b id="c-h">00</b><span>horas</span></div>
+        <div><b id="c-m">00</b><span>min</span></div>
+        <div id="u-s" hidden><b id="c-s">00</b><span>seg</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="col" style="padding-top:8px">
+    <h2>Tracklist</h2>
+    <ol class="tl">
+      <li class="new"><span class="n">01</span><span class="t">Bipolar<span>feat. Angel Cervantes</span></span><span class="tag">Inédita</span></li>
+      <li><span class="n">02</span><span class="t">Destino la muerte<span>feat. Gabriel Ssoe</span></span><span></span></li>
+      <li><span class="n">03</span><span class="t">Quebrado<span>feat. Joaquín Medina</span></span><span></span></li>
+      <li class="new"><span class="n">04</span><span class="t">Picasso</span><span class="tag">Inédita</span></li>
+      <li><span class="n">05</span><span class="t">Pensándote<span>feat. Mosmo</span></span><span></span></li>
+      <li><span class="n">06</span><span class="t">Tal vez</span><span></span></li>
+      <li class="new"><span class="n">07</span><span class="t">Solo</span><span class="tag">Inédita</span></li>
+    </ol>
+  </section>
+</main>
+
+<footer><span>DES</span>SIENTO · Kevin Cuadras · 1.10.2026</footer>
+
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  const DIA=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+  const [y,m,d]=EVENT.date.split('-').map(Number);
+  const dow=new Date(Date.UTC(y,m-1,d,12)).getUTCDay();
+  const t12=t=>{let[h,mi]=t.split(':').map(Number);const ap=h>=12?'pm':'am';h=h%12||12;return h+':'+String(mi).padStart(2,'0')+' '+ap};
+  const cap=s=>s[0].toUpperCase()+s.slice(1);
+
+  $('when').textContent=cap(DIA[dow].slice(0,3))+', '+d+' de '+MES[m-1]+' · '+t12(EVENT.start);
+  $('f-date').textContent=cap(DIA[dow])+' '+d+' de '+MES[m-1];
+  $('f-time').textContent='A partir de las '+t12(EVENT.start);
+  $('f-venue').textContent=EVENT.venue;
+  $('f-addr').textContent=EVENT.address;
+  $('maps').href=EVENT.mapsUrl||'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(EVENT.venue+', '+EVENT.address+', '+EVENT.city);
+
+  /* Calendario (.ics) — CDMX es UTC-6 todo el año */
+  const stamp=dt=>dt.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
+  const at=t=>{const[h,mi]=t.split(':').map(Number);return stamp(new Date(Date.UTC(y,m-1,d,h+6,mi)))};
+  function ics(){
+    const esc=s=>String(s).replace(/([,;\\])/g,'\\$1');
+    const body=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//kevincuadras.com//DESSIENTO//ES','BEGIN:VEVENT',
+      'UID:dessiento-release@kevincuadras.com','DTSTAMP:'+stamp(new Date()),
+      'DTSTART:'+at(EVENT.start),'DTEND:'+at(EVENT.end),
+      'SUMMARY:'+esc('DESSIENTO — Kevin Cuadras'),
+      'LOCATION:'+esc(EVENT.venue+', '+EVENT.address+', '+EVENT.city),
+      'URL:https://kevincuadras.com/release/dessiento/',
+      'END:VEVENT','END:VCALENDAR'].join('\r\n');
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([body],{type:'text/calendar'}));
+    a.download='dessiento.ics';document.body.appendChild(a);a.click();a.remove();
+  }
+  $('ics').onclick=ics; $('ics2').onclick=ics;
+
+  /* Contador a la salida */
+  const target=new Date(EVENT.releaseAt).getTime();
+  const pad=n=>String(n).padStart(2,'0');
+  function tick(){
+    let s=Math.floor((target-Date.now())/1000);
+    if(s<=0){
+      $('count-label').textContent='';
+      $('clock').outerHTML='<p class="out">Ya disponible en todas las plataformas</p>';
+      clearInterval(timer);return;
+    }
+    // Día de lanzamiento (desde las 00:00 CDMX): horas, min y seg. Antes: días, horas y min.
+    const dayOf=Date.now()>=target-18*3600*1000;
+    $('u-d').hidden=dayOf; $('u-s').hidden=!dayOf;
+    const d=Math.floor(s/86400);s%=86400;
+    $('c-d').textContent=pad(d);$('c-h').textContent=pad(Math.floor(s/3600));
+    $('c-m').textContent=pad(Math.floor(s%3600/60));$('c-s').textContent=pad(s%60);
+  }
+  const timer=setInterval(tick,1000);tick();
+
+  const form=$('form'),err=$('err'),btn=$('submit');
+  if(!EVENT.allowPlusOne){$('plus-wrap').remove();$('guest-wrap').remove();}
+  function sync(){
+    const no=form.attending.value==='No';
+    $('phone-wrap').hidden=no;
+    if(!EVENT.allowPlusOne)return;
+    $('plus-wrap').hidden=no;
+    $('guest-wrap').hidden=no||form.plusone.value!=='1';
+  }
+  form.addEventListener('change',sync);
+
+  // Los botones de arriba preseleccionan la respuesta
+  document.querySelectorAll('.answer a').forEach(a=>a.addEventListener('click',()=>{
+    const v=a.dataset.a; form.querySelector('input[name=attending][value="'+v+'"]').checked=true; sync();
+    setTimeout(()=>$('name').focus({preventScroll:true}),450);
+  }));
+
+  form.addEventListener('submit',async e=>{
+    e.preventDefault(); err.textContent='';
+    const att=form.attending.value;
+    const name=form.name.value.trim(), phone=form.phone.value.replace(/[^\d+]/g,'');
+    if(name.length<3){err.textContent='Escribe tu nombre.';form.name.focus();return}
+    if(att!=='No'&&phone.replace('+','').length<10){err.textContent='Revisa tu WhatsApp: son 10 dígitos.';form.phone.focus();return}
+    if(form.company.value)return;
+    const plus=att!=='No'&&EVENT.allowPlusOne&&form.plusone.value==='1';
+    if(plus&&form.guest.value.trim().length<3){err.textContent='Escribe el nombre de tu acompañante.';form.guest.focus();return}
+    if(!EVENT.endpoint){err.textContent='La confirmación aún no está conectada.';return}
+
+    const q=new URLSearchParams(location.search);
+    const payload={name,phone:att==='No'?'':phone,attending:att,plusone:plus?1:0,guest:plus?form.guest.value.trim():'',
+      source:q.get('utm_source')||q.get('ref')||'directo',ua:navigator.userAgent.slice(0,160)};
+
+    btn.disabled=true;btn.textContent='Enviando…';
+    try{
+      await fetch(EVENT.endpoint,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});
+      try{if(window.fbq)fbq('track',att==='Sí'?'CompleteRegistration':'Lead',{content_name:'DESSIENTO release'})}catch(_){}
+      try{if(window.umami)umami.track('rsvp',{attending:att,plusone:payload.plusone})}catch(_){}
+      form.hidden=true; $('done').hidden=false;
+      if(att==='No'){$('done-t').textContent='Gracias por avisar';$('done-p').textContent='DESSIENTO sale el 1 de octubre en todas las plataformas.';$('ics2').remove();}
+      if(att==='Quizá'){$('done-t').textContent='Ojalá puedas llegar';$('done-p').textContent='Si se te acomoda, te esperamos. Te escribimos por WhatsApp un día antes.';}
+    }catch(_){
+      err.textContent='No se pudo enviar. Intenta de nuevo.';btn.disabled=false;btn.textContent='Enviar respuesta';
+    }
+  });
+})();
+</script>
+</body>
+</html>
